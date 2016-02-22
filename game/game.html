@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/game.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/game1.js"></script>
+	<script src="js/animate.js"></script>
+	<![if !IE]>
+	<!--<audio src='music/1.mp3' autoplay="autoplay" loop="-1">-->
+	<!--</audio>-->
+	<![endif]>
+	<script>
+	$(function () {
+		var games;
+		games = new game();
+		games.stop();
+		var panel=$(".panel");
+		panel.css("display","none");
+//		开始
+		var startbox=$(".start");
+		var start=$("#start");
+		var input=$("input");
+		start.click(function () {
+			startbox.css("display","none");
+			var newstep=input.val();
+			// 第几关
+			var stepSpan=$(".ka");
+			stepSpan.html(newstep);
+			games.aa=newstep;
+			games.num=(newstep-1)*10+10;
+			// 生命值
+			var sm=$(".sm");
+			sm.html(games.num);
+			games.speed=(newstep-1)+5;
+			if(newstep>11){
+				newstep=11;
+			}
+			games.letterLen=(newstep-1)+5;
+			setTimeout(function(){
+				games.play();
+				panel.css("display","block");
+			},2000)
+		});
+		// 继续
+
+		var $select=$('select');
+		$select.change(function(){
+			games.speed+=parseInt($select[($select.selectedIndex)].val);
+//			game.letterLen+=parseInt(select[(select.selectedIndex)].val);
+			games.aa+=($select[($select.selectedIndex)].val);
+		});
+		var go=$("#go");
+		var close=$("#close");
+		go.click(function () {
+			games.next();
+			$("#img").css({display:"none"});
+		});
+		// 关闭
+		close.click(function () {
+			var yes = confirm("确定退出游戏吗");
+			if (yes){
+				window.close();
+			}
+		})
+	})
+	</script>
+</head>
+<body>
+
+<!--开始-->
+<div class="start">
+	<div class="select">
+		<span>字母蛇来了</span>
+		<span>请选择关卡: </span>
+		<input type="number" min="1" value="1">
+	</div>
+	<a href="javascript:;" id="start"><div>开始</div></a>
+</div>
+	<div class="panel">
+		<div id="guan">
+			第 <span class="ka">1</span><span> 关</span>
+		</div>
+		<div class="die">
+			<span>生命：</span><span class="sm">10</span>
+		</div>
+		<div class="fen sore">
+			<span>分数：</span><span>0</span>
+		</div>
+
+	</div>
+<!--失败-->
+<div id="img">
+
+	<div class="box-img">
+		<div id="shu"></div>
+		<div id="zuan"></div>
+		<input type="button" value="继续" id="go">
+		<input type="button" value="退出" id="close">
+		<!--<div class="aa">
+			<select name="" id="" title="">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+		</div>-->
+		<img src="img/6.jpg" alt="">
+	</div>
+
+</div>
+</body>
+</html>

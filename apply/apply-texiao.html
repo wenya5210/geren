@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+	<style>
+	html,body{
+		width: 100%;
+		height: 100%;
+	}
+	.box{
+		width: 3000px;height: 3000px;
+		position: absolute;
+		overflow: hidden;
+	}
+		.kuai{
+			padding: 40px;
+			float: left;
+			text-align: center;
+		}
+		.kuai>p{
+			width:300px;
+			margin: 50px auto;
+			line-height:32px;
+			float: left;
+		}
+	</style>
+	<script>
+	$(function(){
+		var clientW=$(window).width();
+		var clientH=$(window).height();
+
+		var box=$(".box");
+		var boxW=box.width();
+		var boxH=box.height();
+
+		box.css({
+			left:(clientW-boxW)/2+"px",
+			top:(clientH-boxH)/2+"px",
+			transform:"scale(0.1,0.1)"
+		});
+		setTimeout(function(){
+			box.css({transition:"transform 1s ease",transform:"scale(1,1)"});
+		},40);
+		
+
+		var biX=(boxW-clientW)/clientW;
+		var biY=(boxH-clientH)/clientH;
+
+		var sbX,sbY;
+
+		$(document).mousemove(function(e){
+			sbX=e.pageX;
+			sbY=e.pageY;
+		});
+		setInterval(function(){
+			box.css({
+				transition:"left 2s ease,top 2s ease",
+				left:-sbX*biX,
+				top:-sbY*biY
+			})
+		},500);
+	})
+	</script>
+</head>
+<body>
+<div class="box">
+
+	<div class="kuai">
+		<img src="img/li/7.jpg" alt="">
+	</div>
+	<div class="kuai">
+		<img src="img/li/8.jpg" alt="">
+	</div>
+	<div class="kuai">
+		<p>
+			我要飞得更高、飞得更高……狂风一样舞蹈，挣脱怀抱。
+			我要飞得更高，飞得更高……
+			老师是知识的工程师；是进步的启蒙者；
+			是抚摸学生心灵的膏药；是开启学生心灵的钥匙；
+			是世界之灵魂。
+			有人说，老师是辛勤的园丁，无微不至地照顾着祖国的花朵　
+			应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行
+		</p>
+	</div>
+	<div class="kuai">
+		<img src="img/li/9.jpg" alt="">
+	</div>
+	<div class="kuai">
+		<p>
+			我要飞得更高、飞得更高……狂风一样舞蹈，挣脱怀抱。
+			我要飞得更高，飞得更高……
+			老师是知识的工程师；是进步的启蒙者；
+			是抚摸学生心灵的膏药；是开启学生心灵的钥匙；
+			是世界之灵魂。
+			有人说，老师是辛勤的园丁，无微不至地照顾着祖国的花朵　
+			应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行
+		</p>
+	</div>
+	<div class="kuai">
+		<img src="img/li/4.jpg" alt="">
+	</div>
+	<div class="kuai">
+		<p>
+			我要飞得更高、飞得更高……狂风一样舞蹈，挣脱怀抱。
+			我要飞得更高，飞得更高……
+			老师是知识的工程师；是进步的启蒙者；
+			是抚摸学生心灵的膏药；是开启学生心灵的钥匙；
+			是世界之灵魂。
+			有人说，老师是辛勤的园丁，无微不至地照顾着祖国的花朵　
+			应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行
+		</p>
+	</div>
+	<div class="kuai">
+		<img src="img/li/5.jpg" alt="">
+	</div>
+	<div class="kuai">
+		<p>
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+			梦想如影随形地穿梭在身体限美好的未来。我要像刘翔抓住那属于我
+		</p>
+	</div>
+	<div class="kuai">
+		<img src="img/li/3.jpg" alt="" style="height: 500px;">
+	</div>
+	<div class="kuai">
+		<p>
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+		</p>
+	</div>
+	<div class="kuai">
+		<img src="img/li/9.jpg" alt="">
+	</div>
+	<div class="kuai">
+		<img src="img/li/6.jpg" alt="">
+	</div>
+	<div class="kuai">
+		<p>
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，
+		</p>
+	</div>
+	<div class="kuai">
+		<img src="img/li/1.jpg" alt="" style="height: 600px">
+	</div>
+	<div class="kuai">
+		<p>
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+		</p>
+	</div>
+	<div class="kuai">
+
+	</div>
+	<div class="kuai">
+		<img src="img/li/5.jpg" alt="" style="height: 600px">
+	</div>
+	<div class="kuai">
+		<p>
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+		</p>
+	</div>
+	<div class="kuai">
+		<p>
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+			梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+		</p>
+	</div>
+	<div class="kuai">
+		<img src="img/li/2.jpg" alt="" style="height: 600px">
+	</div>
+	<div class="kuai">
+		<img src="img/li/6.jpg" alt="" style="height: 600px">
+	</div>
+	<div class="kuai">
+		<img src="img/li/4.jpg" alt="" style="height: 600px">
+	</div>
+	<div class="kuai">
+		<p>
+			16岁，豆蔻年华，应当开创人生，憧憬未来，我要像英雄一样无所畏惧地前行，张开梦想的翅膀，一切尽收眼底；我要像李白般潇洒，提笔畅言，挥洒着青春；梦想如影随形地穿梭在身体的各个细胞，我充满力量，感受着无限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+			梦想如影随形地穿梭在身体限美好的未来。我要像刘翔抓住那属于我的舞台，我将蓄势待发等待着曙光的来临放飞我的梦想！我将在狂风中舞蹈、骤雨中跳跃……
+		</p>
+	</div>
+</div>
+</body>
+</html>

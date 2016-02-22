@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>立方体</title>
+	<style>
+	.changjing{
+		width: 200px;
+		height: 200px;
+		padding:200px;
+		margin: 0 auto;
+		perspective:800px;
+	}
+	.box{
+		width:200px;
+		height: 200px;
+		position: relative;
+		/*transition:transform 2s ease;*/
+		transform-style:preserve-3d;
+		transform-origin:center center 100px;
+	}
+	.box div{
+		border: 1px solid #000;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;top: 0;
+		text-align: center;
+		font-size: 100px;
+		color: #000;
+		line-height: 200px;
+	}
+
+	/* 上 面  */
+	.box div:nth-child(1){
+		background: red;
+		transform:rotateX(90deg);
+		transform-origin:top;
+	}
+	/* 左 面  */
+	.box div:nth-child(2){
+		background: yellow;
+		transform:rotateY(-90deg);
+		transform-origin:left;
+	}
+	/* 后 面 */
+	.box div:nth-child(3){
+		background: blue;
+		transform:rotateY(180deg);
+	}
+	/* 右 面 */
+	.box div:nth-child(4){
+		background: pink;
+		transform:rotateY(90deg);
+		transform-origin:right;
+	}
+	/* 前 面 */
+	.box div:nth-child(5){
+		background:green;
+		transform:translateZ(200px);
+	}
+	/* 下 面 */
+	.box div:nth-child(6){
+		background: orange;
+		transform:rotateX(-90deg);
+		transform-origin:bottom;
+	}
+	/*.box:hover{
+		transform:rotateY(180deg);
+	}*/
+
+	</style>
+	<script src="jquery.js"></script>
+	<script>
+	$(function(){
+		var box=$(".box");
+		var cx=box.offset().left+box.width()/2;
+		var cy=box.offset().top+box.height()/2;
+		$(document).mousemove(function(e){
+			var px=e.pageX-cx;
+			var py=e.pageY-cy;
+			var pz=0;
+
+			var m=Math.sqrt(px*px+py*py+pz*pz);
+
+			var bx=px/m;
+			var by=py/m;
+			var bz=pz/m;
+			box.css({
+				transform:"rotate3d("+bx+","+by+","+bz+","+m+"deg)"
+			})
+		})
+	})
+	</script>
+</head>
+<body>
+	<div class="changjing">
+		<div class="box">
+			<div><img src="img/xiao.jpg" alt=""></div>
+			<div><img src="img/han.jpg" alt=""></div>
+			<div><img src="img/piezui.jpg" alt=""></div>
+			<div><img src="img/pi.jpg" alt=""></div>
+			<div><img src="img/chou.jpg" alt=""></div>
+			<div><img src="img/haixiu.jpg" alt=""></div>
+		</div>
+	</div>
+</body>
+</html>

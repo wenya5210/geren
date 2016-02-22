@@ -1,0 +1,266 @@
+body,ul,li{
+    margin:0;
+    padding:0;
+    list-style:none;
+    font-family: "宋体";
+}
+html,body{
+    height: 100%;
+}
+.container{
+    width: 1000px;
+    height:100%;
+    margin: 0 auto;
+    overflow: hidden;
+    /*border:2px solid #000;*/
+}
+.parent>div>div[data-role]{
+    font-size: 25px;
+}
+.menu{
+    height: 120px;
+    width:100%;
+    border:1px solid #000;
+    text-align: center;
+    line-height:120px;
+    background:#000;
+    position: relative;
+    z-index:10;
+    cursor: pointer;
+    color: #333;
+}
+.menu .parent{
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin: 20px;
+}
+.menu .parent>div{
+    width:100%;
+    height:100%;
+    padding: 5px;
+    border-radius: 50%;
+    text-align: center;
+    line-height:80px;
+}
+.menu .parent>div{
+    font-size: 12px;
+}
+.menu .parent>div>div{
+    margin-top: 18px;
+}
+*[class=wenjian]{
+    background: #435DB2;
+    color: #fff;
+}
+*[class=lei]{
+    background:#B243AD ;
+    color: #fff;
+}
+*[class=huahua]{
+    background:#243C3C;
+    color: #fff;
+}
+*[class=xian]{
+    background: #142F96;
+    color: #fff;
+}
+*[class=xiangpi]{
+    background: #207D59;
+    color: #fff;
+}
+*[class=select]{
+    background: #A05512;
+    color: #fff;
+}
+.lineColor{
+    background: #B55A53;
+    color: #fff;
+}
+
+.fillColor{
+    background: #3B5B8E;
+    color: #fff;
+}
+.menu .parent .son{
+    width: 100%;
+    height:100%;
+    border-radius: 50%;
+    border: 1px solid #dddddd;
+    background:#ccc;
+    display: none;
+}
+.son li{
+    width: 100%;
+    height:100%;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    background: #2e6da4;
+    border: 1px solid skyblue;
+    transition: all 1s ease;
+}
+.son li:hover{
+    background: #eee;
+    color: #000;
+}
+.parent:hover div{
+    opacity: 0.8;
+}
+.parent:hover div>div{
+    animation: move 1s linear forwards;
+}
+
+@keyframes move {
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+.box{
+    width: 886px;
+    height:800px;
+    background: #000;
+    margin-left: 114px;
+    position: relative;
+}
+.box .hua{
+    width: 50px;
+    height:100%;
+    color: #000;
+    background: #000;
+    font-size: 30px;
+    position: absolute;
+    right:0;
+    top:0;
+    z-index: 33;
+    text-align: center;
+}
+.box .hua>li{
+    width: 50px;
+    height:50px;
+    float: left;
+    color: #000;
+    text-align: center;
+    line-height: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    opacity:0.7;
+}
+.box .hua>li:hover {
+    opacity: 1;
+}
+.box .copy{
+    width: 100%;
+    height:750px;
+    position: absolute;
+    z-index: 22;
+}
+.box canvas{
+    position: absolute;
+    left:0;
+    top:0;
+    background: #9acfea;
+}
+
+.xp{
+    width: 6px;
+    height: 6px;
+    border: 1px solid #000;
+    position: absolute;
+    left:0;
+    top: 50px;
+    display:none;
+}
+.area{
+    border:1px dotted #000;
+    position: absolute;
+    left:0;
+    top:50px;
+    display: none;
+}
+
+
+/* 左侧选项*/
+.list{
+    width: 10%;
+    height: 670px;
+    float: left;
+}
+.left-select{
+    width: 100%;
+    height:100%;
+    background:#000;
+    border:1px solid #000;
+    padding:50px 6px;
+    margin-top: -1px;
+}
+.left-select li{
+    width: 60px;
+    height:60px;
+    color: #fff;
+    text-align: center;
+    line-height:60px;
+    margin:40px auto 10px;
+    transform: rotate(45deg);
+    font-size:14px;
+    cursor: pointer;
+}
+.left-select li:nth-child(1){
+    margin-top: 0;
+}
+.left-select li:hover{
+   opacity: 0.8;
+    transition: transform .35s linear;
+    transform: rotateY(360deg);
+}
+
+.left-select li div{
+    transform: rotate(-45deg);
+}
+.left-select li:hover div{
+    transform: rotateY(45deg);
+    text-align: center;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.left-select li>div{
+    padding-top:13px;
+    padding-left:9px;
+}
+
+
+/*  右边  */
+.box .hua>.yi{
+    color: #2ac845;
+}
+.box .hua>.er{
+    color: #8a6de9;
+}
+.box .hua>.san{
+    color: #142F96;
+}
+.box .hua>.si{
+    color: #761c19;
+}
+.box .hua>.wu{
+    color: #B243AD;
+}
+.box .hua>.liu{
+    color: #ffff00;
+}
+.box .hua>.qi{
+    color: #A05512;
+}
+.box .hua>.ba{
+    color:#ff5053;
+}
+.box .hua>.jiu{
+    color: #FF7F50;
+}
+.box .hua>.shi{
+     color: #2b669a;
+ }
+

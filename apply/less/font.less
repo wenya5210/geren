@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'demo';
+  src: url('../fonts/iconfont.eot'); /* IE9*/
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+@name1:search;
+@name2:sc;
+@name3:logo;
+@name4:shop;
+@name5:apply;
+@name6:suo;
+@name7:order;
+@name8:admin;
+
+@con1:e601;
+@con2:e604;
+@con3:e605;
+@con4:e602;
+@con5:e600;
+@con6:e603;
+@con7:e606;
+@con8:e607;
+
+.for(@i:1)when(@i<=6){
+  @n:"name@{i}";
+  @n1:@@n;
+  @c:"con@{i}";
+  @c1:@@c;
+  *[data-role=@{n1}]:before{
+    content: '\@{c1}';
+    font-family: demo;
+  }
+  .for(@i+1);
+}
+.for();

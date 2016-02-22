@@ -1,0 +1,52 @@
+body,div{
+	margin: 0;
+	padding: 0;
+}
+.box{
+	width: 320px;
+	height: 500px;
+	margin: auto;
+	position: relative;
+	margin-top:200px;
+	z-index: 2;
+	background:url(../img/fcbg.png);
+}
+.pic{
+	background: url(../img/fc.png);
+	width: 427px;
+	height: 423px;
+	position: absolute;
+	right: 60px;
+	top: -170px;
+	z-index: 1;
+	-webkit-animation:load 2s linear 1s infinite;  /* load 是起了个name名字*/ /* Safari and Chrome */
+	-moz-animation:load 2s linear 1s infinite;    /* Firefox */
+	-ms-animation:load 2s linear 1s infinite;   /* IE 9 */
+	-o-animation:load 2s linear 1s infinite;   /* Opera */
+	animation:load 2s linear 1s infinite;
+}
+.upc{
+	background:url(../img/fcc.png);
+	position:absolute;
+	top:0;
+	right:230px;
+	width:90px;
+	height:97px;
+	z-index:3;
+}
+@-webkit-keyframes load{  /* load 是起了个name名字  对应上面的name名*/
+	0%{
+		transform: rotate(0);   /* 旋转  单位是度数   0 度 */
+		-ms-transform: rotate(0);		/* IE 9 */
+		-webkit-transform: rotate(0);	/* Safari and Chrome */
+		-o-transform: rotate(0);		/* Opera */
+		-moz-transform: rotate(0);		/* Firefox */
+	}
+	100%{
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);		/* IE 9 */
+		-webkit-transform: rotate(360deg);	/* Safari and Chrome */
+		-o-transform: rotate(360deg);		/* Opera */
+		-moz-transform: rotate(360deg);		/* Firefox */
+	}
+}

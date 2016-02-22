@@ -1,0 +1,108 @@
+@import "val";
+
+*{
+  box-sizing: border-box;
+}
+*[text-l]{
+  text-align: left;
+}
+*[text-c]{
+  text-align: center;
+}
+*[text-r]{
+  text-align: right;
+}
+.container{
+  @media screen and (max-width: @num1){
+    width: @num1*1px-100px;
+    .public;
+
+    &>.row>.col-s-v{
+      display: block;
+    }
+    &>.row>.col-s-h{
+      display: none;
+    }
+  }
+
+  .response(s);
+
+  @media screen and (min-width: @num1) and (max-width: @num2){
+    width: @num1;
+    .public;
+    .response(m);
+    &>.row>.col-m-v{
+      display: block;
+    }
+    &>.row>.col-m-h{
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: @num2){
+    width: @num2;
+    .public;
+    .response(l);
+    &>.row>.col-l-v{
+      display: block;
+    }
+    &>.row>.col-l-h{
+      display: none;
+    }
+  }
+}
+
+.response(@type,@i:1)when (@i<=@col){
+  &>.row>.col-@{type}-@{i}{
+    float: left;
+    width:@i/@col*100%;
+  }
+  &-fluid>.row>.col-@{type}-@{i}{
+    float: left;
+    width:@i/@col*100%;
+  }
+  &>.row>.col-@{type}-left-@{i}{
+    position: relative;
+    left:@i/@col*-100%;
+  }
+  &>.row>.col-@{type}-right-@{i}{
+    position: relative;
+    left:@i/@col*100%;
+  }
+  &-fluid>.row>.col-@{type}-left-@{i}{
+    position: relative;
+    left:@i/@col*-100%;
+  }
+  &-fluid>.row>.col-@{type}-right-@{i}{
+    position: relative;
+    left:@i/@col*100%;
+  }
+  .response(@type,@i+1);
+}
+
+.public(){
+  margin: 0 auto;
+  .clear;
+  &>.row{
+    width:100%;
+    .clear;
+  }
+  &-fluid{
+    width:100%;
+    .clear;
+  }
+  &-fluid>.row{
+    width:100%;
+    .clear;
+  }
+}
+// 清除浮动
+.clear(){
+  &:before,&:after{
+    content: '';
+    display:block;
+  }
+  &:after{
+    clear: both;
+  }
+}

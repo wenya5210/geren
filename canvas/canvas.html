@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘图板</title>
+    <link rel="stylesheet" href="css/canvas.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/gongneng.js"></script>
+</head>
+<body>
+    <div class="container">
+        <ul class="menu">
+            <li class="parent hasson">
+                <div class="huahua"><div data-role="hua" icon-pos="top"></div>画图</div>
+                <ul class="son huatu"></ul>
+            </li>
+
+            <li class="parent hasson">
+                <div class="wenjian"><div data-role="file" icon-pos="top"></div>文件</div>
+                <ul class="son file"></ul>
+            </li>
+            <li class="parent hasson">
+                <div class="lei"><div data-role="type" icon-pos="top"></div>类型</div>
+                <ul class="son type"></ul>
+            </li>
+            <li class="parent">
+                <div title="线条的颜色" class="lineColor"><input type="color"></div>
+            </li>
+            <li class="parent">
+                <div title="填充颜色" class="fillColor"><input type="color"></div>
+            </li>
+            <li class="parent hasson">
+                <div class="xian"><div data-role="bi" icon-pos="top"></div>线条样式</div>
+                <ul class="son linestyle"></ul>
+            </li>
+            <li class="parent hasson">
+                <div class="xiangpi"><div data-role="xp" icon-pos="top"></div>橡皮</div>
+                <ul class="son xpstyle"></ul>
+            </li>
+            <li class="parent hasson">
+                <div class="select"><div data-role="select" icon-pos="top"></div>选择</div>
+            </li>
+        </ul>
+        <!--左侧-->
+        <div class="list">
+            <ul class="left-select">
+                <li data-role="line"  class="huahua"><div data-role="xian" icon-pos="top">线</div></li>
+                <li data-role="rect"  class="huahua"><div data-role="juxing" icon-pos="top">矩形</div></li>
+                <li data-role="circle"  class="huahua"><div data-role="kxy" icon-pos="top">圆</div></li>
+                <li data-role="pen"  class="huahua"><div data-role="bi" icon-pos="top">铅笔</div></li>
+                <li data-role="start"  class="huahua"><div data-role="wujiao" icon-pos="top">五角星</div></li>
+            </ul>
+            <ul class="left-select">
+                <li class="wenjian"><div data-role="new" icon-pos="top">新建</div></li>
+                <li class="wenjian"><div data-role="baocun" icon-pos="top">保存</div></li>
+                <li class="wenjian"><div data-role="return" icon-pos="top">返回</div></li>
+            </ul>
+            <ul class="left-select">
+                <li data-role="fill" class="lei"><div data-role="tian" icon-pos="top">填充</div></li>
+                <li  data-role="stroke" class="lei"><div data-role="hualine" icon-pos="top">画线</div></li>
+            </ul>
+            <ul class="left-select">
+            </ul>
+            <ul class="left-select">
+            </ul>
+            <ul class="left-select">
+                <li data-role="1" class="xian"><div data-role="xx" icon-pos="top">细</div></li>
+                <li data-role="3" class="xian"><div data-role="zx" icon-pos="top">中</div></li>
+                <li data-role="6" class="xian"><div data-role="cx" icon-pos="top">粗</div></li>
+            </ul>
+            <ul class="left-select">
+                <li data-role="10"  class="xiangpi"><div data-role="xp" icon-pos="top">小</div></li>
+                <li data-role="20"  class="xiangpi"><div data-role="xp" icon-pos="top" style="font-size: 15px">中</div></li>
+                <li data-role="30"  class="xiangpi"><div data-role="xp" icon-pos="top"  style="font-size: 20px">大</div></li>
+            </ul>
+            <ul class="left-select">
+            </ul>
+        </div>
+        <div class="box">
+            <ul class="hua">
+                <li class="yi" data-role="xin" color="#2ac845"></li>
+                <li class="er" data-role="xin" color="#8a6de9"></li>
+                <li class="san" data-role="xin" color="#142F96"></li>
+                <li class="si" data-role="xin" color="#761c19"></li>
+                <li class="wu" data-role="xin" color="#B243AD"></li>
+                <li class="liu" data-role="xin" color="#ffff00"></li>
+                <li class="qi" data-role="xin" color="#A05512"></li>
+                <li class="ba" data-role="xin" color="#ff5053"></li>
+                <li class="jiu" data-role="xin" color="#FF7F50"></li>
+                <li class="shi" data-role="xin" color="#2b669a"></li>
+            </ul>
+            <div class="copy"></div>
+            <canvas></canvas>
+            <div class="xp"></div>
+            <div class="area"></div>
+        </div>
+    </div>
+</body>
+</html>

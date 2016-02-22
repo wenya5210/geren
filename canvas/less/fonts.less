@@ -1,0 +1,95 @@
+@font-face {font-family: 'demo';
+  src: url('../fonts/iconfont.eot'); /* IE9*/
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+@name1:return;
+@name2:xian;
+@name3:new;
+@name4:zx;
+@name5:juxing;
+@name6:hua;
+@name7:cx;
+@name8:file;
+@name9:xx;
+@name10:xp;
+@name11:select;
+@name12:xpm;
+@name13:color;
+@name14:type;
+@name15:kxy;
+@name16:wujiao;
+@name17:bi;
+@name18:baocun;
+@name19:tian;
+@name20:hualine;
+@name21:xin;
+
+@con1:e608;
+@con2:e609;
+@con3:e60a;
+@con4:e60b;
+@con5:e60c;
+@con6:e600;
+@con7:e60d;
+@con8:e601;
+@con9:e60e;
+@con10:e60f;
+@con11:e602;
+@con12:e603;
+@con13:e610;
+@con14:e604;
+@con15:e611;
+@con16:e612;
+@con17:e613;
+@con18:e614;
+@con19:e606;
+@con20:e607;
+@con21:e615;
+
+
+.for(@i:1) when (@i<=21){
+  @n:'name@{i}';
+  @n1:@@n;
+  @c:'con@{i}';
+  @c1:@@c;
+  *[data-role=@{n1}]:before{
+    font-family: demo;
+    content: "\@{c1}";
+  }
+  *[data-role=@{n1}][icon-pos=top]:before{
+    display:block;
+    font-family: demo;
+    content: "\@{c1}";
+    line-height:0;
+    text-align: center;
+  }
+
+  *[data-role=@{n1}][icon-pos=right]:before {
+    font-family: demo;
+    content: "";
+  }
+  *[data-role=@{n1}][icon-pos=right]:after{
+    font-family: demo;
+    content: "\@{c1}";
+  }
+
+
+  *[data-role=@{n1}][icon-pos=bottom]:before {
+    font-family: demo;
+    content: "";
+  }
+  *[data-role=@{n1}][icon-pos=bottom]:after{
+    font-family: demo;
+    content: "\@{c1}";
+    display: block;
+  }
+  .for(@i+1);
+}
+
+.for();
+
+
